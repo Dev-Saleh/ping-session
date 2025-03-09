@@ -1,0 +1,13 @@
+name: Run Webhook Every 8 Minutes
+
+on:
+  schedule:
+    - cron: '*/8 * * * *'  # تشغيل كل 8 دقائق
+  workflow_dispatch:  # للسماح بالتشغيل اليدوي إذا احتجت إليه
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call Webhook
+        run: curl -X POST "https://hook.eu2.make.com/xzq6pxfvcl2nyufmshtmirvl39wf74ir"
